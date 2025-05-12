@@ -1,8 +1,8 @@
 
 import React from 'react';
+import {useState} from 'react';
 import { View, Text, TouchableOpacity, SafeAreaView, FlatList, StyleSheet } from 'react-native';
 import { ChevronLeftIcon, ShareIcon, AdjustmentsVerticalIcon, PlusIcon } from 'react-native-heroicons/solid';
-
 const Tasks = () => {
   const columns = ['Name', 'Due Date', 'Collaborators', 'Task Visibility'];
   const tasks = [
@@ -60,25 +60,26 @@ const Tasks = () => {
           )}
         />
       </View>
+         
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 20, backgroundColor: '#f8f9fa' , width:'100%'},
+  container: { flex: 1, padding: 20, backgroundColor: '#f8f9fa' , width:'100%', margin:'3%'},
   header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
   leftHeader: { flexDirection: 'row', alignItems: 'center' },
-  headerText: { fontSize: 18, fontWeight: 'bold', marginLeft: 10 },
+  headerText: { fontSize: 13, fontWeight: 'bold', marginLeft: 10 },
   rightHeader: { flexDirection: 'row' },
   button: { borderWidth: 1, borderColor: '#ccc',borderRadius:6, padding: 3, marginLeft: 10 },
-  nav: { flexDirection: 'row', alignItems: 'center', marginVertical: 10 },
+  nav: { flexDirection: 'row', alignItems: 'center', marginVertical: 10,marginLeft:'2%' },
   navItem: { marginRight: 15, fontSize: 16 },
   horizontalLine: { height: 1, backgroundColor: '#ccc', marginVertical: 10 },
-  dropdown: { backgroundColor: 'blue', padding: 10, borderRadius: 5, alignItems: 'center' },
-  dropdownText: { color: 'white', fontSize: 16 },
+  dropdown: { backgroundColor: 'blue', padding: 10,width:'20%', borderRadius: 5, alignItems: 'center',margin:'3%' },
+  dropdownText: { color: 'white', fontSize: 12 },
   kanbanBoard: { marginTop: 20 },
   headerRow: { flexDirection: 'row', justifyContent: 'space-between', paddingVertical: 10, backgroundColor: '#ddd' },
-  taskRow: { flexDirection: 'row', justifyContent: 'space-between', paddingVertical: 10, borderBottomWidth: 1, borderBottomColor: '#ccc' },
+  taskRow: { flexDirection: 'row', justifyContent: 'space-between', paddingVertical: 10,margin:'3%', borderBottomWidth: 1, borderBottomColor: '#ccc' },
   taskText: { fontSize: 14 },
 });
 

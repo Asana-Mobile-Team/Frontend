@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from 'react-native';
-import Tasks from '../screens/Tasks';
+import Tasks from '../screens/Tasks/Tasks';
 // Import the global.css file in the index.js file:
 
 export default function HomeScreen() {
