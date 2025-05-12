@@ -1,6 +1,6 @@
 
 import React from 'react';
-import {useState} from 'react';
+
 import { View, Text, TouchableOpacity, SafeAreaView, FlatList, StyleSheet } from 'react-native';
 import { ChevronLeftIcon, ShareIcon, AdjustmentsVerticalIcon, PlusIcon } from 'react-native-heroicons/solid';
 const Tasks = () => {
