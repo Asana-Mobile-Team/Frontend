@@ -1,9 +1,11 @@
 
-import React from 'react';
+import React,{useState} from 'react';
 
 import { View, Text, TouchableOpacity, SafeAreaView, FlatList, StyleSheet } from 'react-native';
 import { ChevronLeftIcon, ShareIcon, AdjustmentsVerticalIcon, PlusIcon } from 'react-native-heroicons/solid';
 const Tasks = () => {
+const[Visible,setVisible] = useState(false);
+const [task,setTask]=useState(false);
   const columns = ['Name', 'Due Date', 'Collaborators', 'Task Visibility'];
   const tasks = [
     { name: 'Task 1', dueDate: 'May 15', collaborators: 'John, Jane', visibility: 'Public' },
@@ -15,8 +17,15 @@ const Tasks = () => {
       {/* Header */}
       <View style={styles.header}>
         <View style={styles.leftHeader}>
-          <ChevronLeftIcon size={24} color="black" />
-          <Text style={styles.headerText}>My Tasks</Text>
+          <ChevronLeftIcon size={24} color="black"  className='border-1 text-2xl'/>
+                          <View style={{flexDirection:'row'}}>
+                            My Tasks
+                           <TouchableOpacity onPress={() => setVisible(!Visible)} style={[styles.button, { marginTop: 10,width:'10%' }]}>
+                               <Text>T</Text>
+                             </TouchableOpacity>
+
+                            {Visible && (<Text>great</Text>)}
+                          </View>
         </View>
         <View style={styles.rightHeader}>
           <TouchableOpacity style={[styles.button,{flexDirection:'row'}]} >Share <ShareIcon size={20} color="black" /></TouchableOpacity>
@@ -35,7 +44,19 @@ const Tasks = () => {
 
       {/* Dropdown */}
       <TouchableOpacity style={styles.dropdown}>
-        <Text style={styles.dropdownText}>Add Task</Text>
+        <Text style={styles.dropdownText}>Add Task
+             <View style={{flexDirection:'column'}}>
+                            My Tasks
+                           <TouchableOpacity onPress={() => setTask(!task)} style={[styles.button, { marginTop: 10,width:'10%' }]}>
+                               <Text>T</Text>
+                             </TouchableOpacity>
+
+                            {task && (<Text>Add Task</Text>)}
+                          </View>
+        
+
+          
+        </Text>
       </TouchableOpacity>
 
       {/* Kanban Board */}
@@ -60,7 +81,8 @@ const Tasks = () => {
           )}
         />
       </View>
-         
+  
+      
     </SafeAreaView>
   );
 };
